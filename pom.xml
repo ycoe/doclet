@@ -9,7 +9,7 @@
 
     <modules>
         <module>SpringMVCDoclet</module>
-        <module>TestMVC</module>
+        <module>MVCTest</module>
         <module>ThriftDoclet</module>
         <module>DocletBase</module>
     </modules>
