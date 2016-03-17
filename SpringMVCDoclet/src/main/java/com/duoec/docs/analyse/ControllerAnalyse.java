@@ -1,13 +1,14 @@
 package com.duoec.docs.analyse;
 
-import com.duoec.docs.constant.DocletConstant;
+import com.duoec.doclet.constant.DocletConstant;
+import com.duoec.doclet.dto.Book;
+import com.duoec.doclet.dto.BookSection;
+import com.duoec.doclet.helper.StringHelper;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 import com.duoec.docs.constant.DocletContext;
-import com.duoec.docs.dto.BookSection;
 import com.duoec.docs.helper.AnnotationHelper;
-import com.duoec.docs.helper.StringHelper;
 import com.duoec.docs.helper.TagHelper;
 import com.duoec.docs.logger.Logger;
-import com.duoec.docs.dto.Book;
 import com.sun.javadoc.AnnotationDesc;
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.MethodDoc;
@@ -25,7 +26,7 @@ public class ControllerAnalyse {
         if(!isAvailableController(controllerDoc)){
             return;
         }
-        AnnotationDesc requestMappingAnnotation = AnnotationHelper.getAnnotation(controllerDoc.annotations(), DocletConstant.ANNOTATION_REQUEST_MAPPING);
+        AnnotationDesc requestMappingAnnotation = AnnotationHelper.getAnnotation(controllerDoc.annotations(), SpringMvcDocletConstant.ANNOTATION_REQUEST_MAPPING);
         Tag[] controllerTags = controllerDoc.tags();
         String bookName = TagHelper.getStringValue(controllerTags, "@book", DocletConstant.DEFAULT_BOOK_NAME);
         if(StringHelper.isEmpty(bookName)){
@@ -78,14 +79,14 @@ public class ControllerAnalyse {
      */
     private static boolean isAvailableController(ClassDoc classDoc){
         String controllerName = classDoc.qualifiedName();
-        AnnotationDesc restControllerAnnotation = AnnotationHelper.getAnnotation(classDoc.annotations(), DocletConstant.ANNOTATION_REST_CONTROLLER);
-        AnnotationDesc controllerAnnotation = AnnotationHelper.getAnnotation(classDoc.annotations(), DocletConstant.ANNOTATION_CONTROLLER);
+        AnnotationDesc restControllerAnnotation = AnnotationHelper.getAnnotation(classDoc.annotations(), SpringMvcDocletConstant.ANNOTATION_REST_CONTROLLER);
+        AnnotationDesc controllerAnnotation = AnnotationHelper.getAnnotation(classDoc.annotations(), SpringMvcDocletConstant.ANNOTATION_CONTROLLER);
         if(restControllerAnnotation == null && controllerAnnotation == null){
             logger.error("ERROR: 类{},未指定@RestController或@Controller", controllerName);
             return false;
         }
 
-        AnnotationDesc requestMappingAnnotation = AnnotationHelper.getAnnotation(classDoc.annotations(), DocletConstant.ANNOTATION_REQUEST_MAPPING);
+        AnnotationDesc requestMappingAnnotation = AnnotationHelper.getAnnotation(classDoc.annotations(), SpringMvcDocletConstant.ANNOTATION_REQUEST_MAPPING);
         if(requestMappingAnnotation == null) {
             logger.error("ERROR: 类{},未指定@RequestMapping", controllerName);
             return false;

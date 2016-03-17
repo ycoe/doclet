@@ -1,8 +1,8 @@
 package com.duoec.docs.doclet.gitbook;
 
-import com.duoec.docs.constant.DocletConstant;
-import com.duoec.docs.dto.ApiItem;
-import com.duoec.docs.dto.BookSection;
+import com.duoec.doclet.constant.DocletConstant;
+import com.duoec.doclet.dto.ApiItem;
+import com.duoec.doclet.dto.BookSection;
 
 import java.util.List;
 

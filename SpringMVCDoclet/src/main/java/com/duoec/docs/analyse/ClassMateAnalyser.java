@@ -1,9 +1,9 @@
 package com.duoec.docs.analyse;
 
+import com.duoec.doclet.dto.ClassMate;
+import com.duoec.doclet.dto.FieldItem;
 import com.duoec.docs.constant.DocletContext;
-import com.duoec.docs.dto.ClassMate;
 import com.duoec.docs.helper.ClassDocHelper;
-import com.duoec.docs.dto.FieldItem;
 import com.duoec.docs.logger.Logger;
 import com.sun.javadoc.*;
 

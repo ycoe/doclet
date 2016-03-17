@@ -1,12 +1,13 @@
 package com.duoec.docs.doclet.gitbook;
 
-import com.duoec.docs.constant.DocletConstant;
+import com.duoec.doclet.constant.DocletConstant;
+import com.duoec.doclet.dto.ApiItem;
+import com.duoec.doclet.dto.ResponseFieldItem;
+import com.duoec.doclet.helper.StringHelper;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 import com.duoec.docs.doclet.TableFormater;
-import com.duoec.docs.dto.RequestFieldItem;
-import com.duoec.docs.dto.ResponseFieldItem;
-import com.duoec.docs.helper.StringHelper;
+import com.duoec.docs.dto.SpringMvcRequestFieldItem;
 import com.duoec.docs.doclet.JsonFormater;
-import com.duoec.docs.dto.ApiItem;
 
 import java.util.List;
 
@@ -69,7 +70,7 @@ public class ApiMD {
         sb.append(DocletConstant.TURN_LINE_2);
 
         //请求参数
-        List<RequestFieldItem> requestParams = api.getRequestParams();
+        List<SpringMvcRequestFieldItem> requestParams = api.getRequestParams();
         if(requestParams == null){
             sb.append("### 接口参数：");
             sb.append("无");
@@ -100,11 +101,11 @@ public class ApiMD {
         sb.append(DocletConstant.TURN_LINE_2);
 
         //尝试显示依赖的java文件
-//        Map<String, List<File>> srcs = DocletConstant.CURRENT_DOC.getSrcs();
+//        Map<String, List<File>> srcs = SpringMvcDocletConstant.CURRENT_DOC.getSrcs();
 //        String api = getCate().getUrl() + getUrl();
 //        if(srcs != null && srcs.containsKey(api)){
 //            sb.append("### 依赖java文件 (请下载后重命名)");
-//            sb.append(DocletConstant.TURN_LINE_2);
+//            sb.append(SpringMvcDocletConstant.TURN_LINE_2);
 //            List<File> javas = srcs.get(api);
 //            for(File java : javas){
 //                sb.append(FileHelper.getJavaSrc(java, 2));

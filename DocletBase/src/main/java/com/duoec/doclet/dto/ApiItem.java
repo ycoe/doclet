@@ -1,4 +1,4 @@
-package com.duoec.docs.dto;
+package com.duoec.doclet.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by ycoe on 16/1/27.
  */
-public class ApiItem {
+public class ApiItem<T extends RequestFieldItem> {
     /**
      * 接口级别(缩进)
      */
@@ -60,7 +60,7 @@ public class ApiItem {
     /**
      * 请求参数
      */
-    private List<RequestFieldItem> requestParams = new ArrayList<RequestFieldItem>();
+    private List<T> requestParams = new ArrayList<T>();
 
     /**
      * Book Section
@@ -156,11 +156,11 @@ public class ApiItem {
         this.response = response;
     }
 
-    public List<RequestFieldItem> getRequestParams() {
+    public List<T> getRequestParams() {
         return requestParams;
     }
 
-    public void setRequestParams(List<RequestFieldItem> requestParams) {
+    public void setRequestParams(List<T> requestParams) {
         this.requestParams = requestParams;
     }
 
@@ -172,7 +172,7 @@ public class ApiItem {
         this.section = section;
     }
 
-    public void addRequestParam(RequestFieldItem item) {
+    public void addRequestParam(T item) {
         requestParams.add(item);
     }
 

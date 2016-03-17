@@ -1,12 +1,12 @@
 package com.duoec.docs.analyse;
 
-import com.duoec.docs.constant.DocletConstant;
+import com.duoec.doclet.dto.ApiItem;
+import com.duoec.doclet.dto.BookSection;
+import com.duoec.doclet.helper.StringHelper;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 import com.duoec.docs.helper.AnnotationHelper;
-import com.duoec.docs.helper.StringHelper;
 import com.duoec.docs.helper.TagHelper;
 import com.duoec.docs.logger.Logger;
-import com.duoec.docs.dto.ApiItem;
-import com.duoec.docs.dto.BookSection;
 import com.sun.javadoc.AnnotationDesc;
 import com.sun.javadoc.MethodDoc;
 import com.sun.javadoc.Tag;
@@ -27,7 +27,7 @@ public class ApiAnalyser {
         Tag[] tags = method.tags();
 
         AnnotationDesc[] annotations = method.annotations();
-        AnnotationDesc requestMapping = AnnotationHelper.getAnnotation(annotations, DocletConstant.ANNOTATION_REQUEST_MAPPING);
+        AnnotationDesc requestMapping = AnnotationHelper.getAnnotation(annotations, SpringMvcDocletConstant.ANNOTATION_REQUEST_MAPPING);
         String url = AnnotationHelper.getStringValue(requestMapping, "value");
         ApiItem api = section.getApiItem(section.getUrl() + url);
         String methodName = method.name();
@@ -80,7 +80,7 @@ public class ApiAnalyser {
      * @return
      */
     private static boolean isAvailable(MethodDoc methodDoc){
-        AnnotationDesc requestMapping = AnnotationHelper.getAnnotation(methodDoc.annotations(), DocletConstant.ANNOTATION_REQUEST_MAPPING);
+        AnnotationDesc requestMapping = AnnotationHelper.getAnnotation(methodDoc.annotations(), SpringMvcDocletConstant.ANNOTATION_REQUEST_MAPPING);
         if(requestMapping == null && !methodDoc.isPublic()){
             logger.info("无效方法{},丢弃!", methodDoc.qualifiedName());
             return false;

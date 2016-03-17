@@ -1,8 +1,9 @@
 package com.duoec.docs.doclet.gitbook;
 
-import com.duoec.docs.constant.DocletConstant;
-import com.duoec.docs.dto.BookSection;
-import com.duoec.docs.dto.Book;
+import com.duoec.doclet.constant.DocletConstant;
+import com.duoec.doclet.dto.Book;
+import com.duoec.doclet.dto.BookSection;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 
 import java.util.List;
 

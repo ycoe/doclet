@@ -1,5 +1,6 @@
 package com.duoec.docs.helper;
 
+import com.duoec.doclet.helper.StringHelper;
 import com.sun.javadoc.AnnotationDesc;
 import com.sun.javadoc.AnnotationValue;
 

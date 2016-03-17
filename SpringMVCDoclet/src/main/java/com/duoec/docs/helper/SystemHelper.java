@@ -1,6 +1,7 @@
 package com.duoec.docs.helper;
 
-import com.duoec.docs.constant.DocletConstant;
+import com.duoec.doclet.helper.StringHelper;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 
 /**
  * Created by ycoe on 16/1/27.
@@ -20,7 +21,7 @@ public class SystemHelper {
      * 初始化客户参数
      */
     public static void initCustomerParams() {
-        DocletConstant.WEB_APP_CONTEXT = StringHelper.isNullThenSet(System.getProperty("web.app.context"), "");
+        SpringMvcDocletConstant.WEB_APP_CONTEXT = StringHelper.isNullThenSet(System.getProperty("web.app.context"), "");
 
 
     }

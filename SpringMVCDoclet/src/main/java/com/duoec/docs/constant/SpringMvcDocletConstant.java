@@ -3,7 +3,7 @@ package com.duoec.docs.constant;
 /**
  * Created by ycoe on 15-11-28.
  */
-public class DocletConstant {
+public class SpringMvcDocletConstant {
 
     public static final String ANNOTATION_REST_CONTROLLER = "org.springframework.web.bind.annotation.RestController";
 
@@ -13,16 +13,6 @@ public class DocletConstant {
 
     public static final String ANNOTATION_NOT_NULL = "javax.validation.constraints.NotNull";
 
-    public static final String TURN_LINE_2 = "\n\n";
-
-    public static final String TAB = "   ";
-
-    public static final String TURN_LINE = "\n";
-
-    /**
-     * 默认的book name
-     */
-    public static final String DEFAULT_BOOK_NAME = "docs";
 
     /**
      * 默认web_app_context,比如/api
@@ -34,6 +24,6 @@ public class DocletConstant {
      */
     public static String OUTPUT_PATH;
 
-    private DocletConstant(){}
+    private SpringMvcDocletConstant(){}
 
 }

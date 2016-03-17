@@ -1,11 +1,11 @@
 package com.duoec.docs.doclet.gitbook;
 
-import com.duoec.docs.dto.BookSection;
+import com.duoec.doclet.dto.ApiItem;
+import com.duoec.doclet.dto.Book;
+import com.duoec.doclet.dto.BookSection;
 import com.duoec.docs.helper.FileHelper;
 import com.duoec.docs.logger.Logger;
 import com.duoec.docs.doclet.IDoclet;
-import com.duoec.docs.dto.ApiItem;
-import com.duoec.docs.dto.Book;
 
 import java.io.File;
 import java.util.List;

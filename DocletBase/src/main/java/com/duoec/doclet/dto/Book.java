@@ -1,6 +1,4 @@
-package com.duoec.docs.dto;
-
-import com.duoec.docs.logger.Logger;
+package com.duoec.doclet.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +7,6 @@ import java.util.List;
  * Created by ycoe on 16/1/27.
  */
 public class Book {
-    private static final Logger logger = Logger.getInstance(Book.class);
-
     /**
      * 名称
      */
@@ -82,8 +78,6 @@ public class Book {
                 return section;
             }
         }
-        logger.info("添加Section: {}", sectionName);
-
         BookSection section = new BookSection(sectionName);
         section.setBook(this);
         section.setLevel(1);

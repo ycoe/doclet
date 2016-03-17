@@ -1,10 +1,10 @@
 package com.duoec.docs.analyse;
 
-import com.duoec.docs.constant.DocletConstant;
-import com.duoec.docs.dto.ClassMate;
+import com.duoec.doclet.dto.ClassMate;
+import com.duoec.doclet.dto.FieldItem;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 import com.duoec.docs.helper.AnnotationHelper;
 import com.duoec.docs.helper.TagHelper;
-import com.duoec.docs.dto.FieldItem;
 import com.sun.javadoc.AnnotationDesc;
 import com.sun.javadoc.FieldDoc;
 import com.sun.javadoc.Type;
@@ -36,7 +36,7 @@ public class FieldAnalyser {
         item.setSince(TagHelper.getStringValue(field.tags("@since")));
 
         //优先判断是否有 @NotNull
-        AnnotationDesc annotation = AnnotationHelper.getAnnotation(field.annotations(), DocletConstant.ANNOTATION_NOT_NULL);
+        AnnotationDesc annotation = AnnotationHelper.getAnnotation(field.annotations(), SpringMvcDocletConstant.ANNOTATION_NOT_NULL);
         if(annotation != null){
             item.setRequired(true);
         }else{

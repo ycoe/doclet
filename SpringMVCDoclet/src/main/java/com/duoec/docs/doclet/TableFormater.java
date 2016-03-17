@@ -1,10 +1,11 @@
 package com.duoec.docs.doclet;
 
-import com.duoec.docs.constant.DocletConstant;
-import com.duoec.docs.dto.ClassMate;
-import com.duoec.docs.helper.StringHelper;
-import com.duoec.docs.dto.FieldItem;
-import com.duoec.docs.dto.RequestFieldItem;
+import com.duoec.doclet.constant.DocletConstant;
+import com.duoec.doclet.dto.ClassMate;
+import com.duoec.doclet.dto.FieldItem;
+import com.duoec.doclet.helper.StringHelper;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
+import com.duoec.docs.dto.SpringMvcRequestFieldItem;
 import com.sun.javadoc.AnnotationDesc;
 
 import java.util.List;
@@ -13,19 +14,19 @@ import java.util.List;
  * Created by ycoe on 16/1/29.
  */
 public class TableFormater {
-    public static String toMarkdown(List<RequestFieldItem> items) {
+    public static String toMarkdown(List<SpringMvcRequestFieldItem> items) {
         StringBuilder sb = new StringBuilder();
         sb.append("|参数名|类型|来源|是否必填|说明|");
         sb.append(DocletConstant.TURN_LINE);
         sb.append("|:--|:--:|:--:|:--:|:--|");
         sb.append(DocletConstant.TURN_LINE);
-        for (RequestFieldItem item : items){
+        for (SpringMvcRequestFieldItem item : items){
             sb.append(toRowMarkdown(item));
             sb.append(DocletConstant.TURN_LINE);
         }
 
         //属性补充说明
-        for (RequestFieldItem item : items){
+        for (SpringMvcRequestFieldItem item : items){
             List<FieldItem> children = item.getItems();
             if(!children.isEmpty()){
                 sb.append(getAttrs(item.getName(), item));
@@ -56,7 +57,7 @@ public class TableFormater {
         return sb.toString();
     }
 
-    private static String toRowMarkdown(RequestFieldItem item){
+    private static String toRowMarkdown(SpringMvcRequestFieldItem item){
         StringBuilder sb = new StringBuilder();
         sb.append("|");
         sb.append(item.getName());

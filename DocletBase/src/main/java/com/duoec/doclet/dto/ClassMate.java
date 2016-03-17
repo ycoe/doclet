@@ -1,6 +1,6 @@
-package com.duoec.docs.dto;
+package com.duoec.doclet.dto;
 
-import com.duoec.docs.helper.StringHelper;
+import com.duoec.doclet.helper.StringHelper;
 
 import java.util.ArrayList;
 import java.util.List;

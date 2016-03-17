@@ -1,9 +1,9 @@
 package com.duoec.docs.doclet;
 
-import com.duoec.docs.constant.DocletConstant;
-import com.duoec.docs.dto.ClassMate;
-import com.duoec.docs.helper.StringHelper;
-import com.duoec.docs.dto.FieldItem;
+import com.duoec.doclet.constant.DocletConstant;
+import com.duoec.doclet.dto.ClassMate;
+import com.duoec.doclet.dto.FieldItem;
+import com.duoec.doclet.helper.StringHelper;
 
 import java.util.ArrayList;
 import java.util.List;

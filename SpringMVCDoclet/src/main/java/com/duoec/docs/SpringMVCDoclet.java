@@ -1,10 +1,10 @@
 package com.duoec.docs;
 
+import com.duoec.doclet.helper.StringHelper;
 import com.duoec.docs.analyse.ControllerAnalyse;
-import com.duoec.docs.constant.DocletConstant;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 import com.duoec.docs.constant.DocletContext;
 import com.duoec.docs.doclet.IDoclet;
-import com.duoec.docs.helper.StringHelper;
 import com.duoec.docs.helper.SystemHelper;
 import com.duoec.docs.logger.Logger;
 import com.sun.javadoc.*;
@@ -30,8 +30,8 @@ public class SpringMVCDoclet extends Doclet {
         SystemHelper.initCustomerParams();
 
         //输出路径
-        DocletConstant.OUTPUT_PATH = projectPath;
-        logger.info("文档输出目录:" + DocletConstant.OUTPUT_PATH);
+        SpringMvcDocletConstant.OUTPUT_PATH = projectPath;
+        logger.info("文档输出目录:" + SpringMvcDocletConstant.OUTPUT_PATH);
 
         String docletName = SystemHelper.getDocletClass();
         if(StringHelper.isEmpty(docletName)){

@@ -1,8 +1,8 @@
 package com.duoec.docs.analyse;
 
-import com.duoec.docs.dto.RequestFieldItem;
-import com.duoec.docs.helper.StringHelper;
-import com.duoec.docs.dto.ApiItem;
+import com.duoec.doclet.dto.ApiItem;
+import com.duoec.doclet.helper.StringHelper;
+import com.duoec.docs.dto.SpringMvcRequestFieldItem;
 import com.sun.javadoc.*;
 
 import java.util.HashMap;
@@ -32,7 +32,7 @@ public class RequestAnalyser {
     }
 
     private static void analyseRequestItem(ApiItem api, Map<String, ParamTag> paramMap, Parameter parameter) {
-        RequestFieldItem item = new RequestFieldItem();
+        SpringMvcRequestFieldItem item = new SpringMvcRequestFieldItem();
         item.setApi(api);
         String name = parameter.name();
         item.setName(name);

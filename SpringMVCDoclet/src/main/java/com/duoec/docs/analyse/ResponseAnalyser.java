@@ -1,8 +1,8 @@
 package com.duoec.docs.analyse;
 
-import com.duoec.docs.dto.ResponseFieldItem;
+import com.duoec.doclet.dto.ApiItem;
+import com.duoec.doclet.dto.ResponseFieldItem;
 import com.duoec.docs.helper.TagHelper;
-import com.duoec.docs.dto.ApiItem;
 import com.sun.javadoc.MethodDoc;
 import com.sun.javadoc.Type;
 

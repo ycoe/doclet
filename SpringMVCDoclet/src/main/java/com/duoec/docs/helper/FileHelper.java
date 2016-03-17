@@ -1,6 +1,6 @@
 package com.duoec.docs.helper;
 
-import com.duoec.docs.constant.DocletConstant;
+import com.duoec.doclet.constant.DocletConstant;
 import com.duoec.docs.logger.Logger;
 
 import java.io.*;
@@ -90,7 +90,7 @@ public class FileHelper {
 
     public static String formatFilePath(File java){
         String path = java.getParentFile().getPath();
-//        String customerPackagePath = DocletConstant.CUSTOMER_PACKAGE.replaceAll("\\.", "/") + "/";
+//        String customerPackagePath = SpringMvcDocletConstant.CUSTOMER_PACKAGE.replaceAll("\\.", "/") + "/";
 //        int index = path.indexOf(customerPackagePath);
 ////        int index = path.indexOf("com/fangdd/");
 //        if(index != -1){

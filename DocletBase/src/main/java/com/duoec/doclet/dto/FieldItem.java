@@ -1,4 +1,4 @@
-package com.duoec.docs.dto;
+package com.duoec.doclet.dto;
 
 /**
  * Created by ycoe on 16/1/27.

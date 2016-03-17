@@ -1,6 +1,7 @@
 package com.duoec.docs.doclet;
 
-import com.duoec.docs.dto.Book;
+
+import com.duoec.doclet.dto.Book;
 
 /**
  * Created by ycoe on 16/1/27.

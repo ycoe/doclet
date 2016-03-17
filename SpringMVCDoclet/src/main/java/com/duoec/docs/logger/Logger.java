@@ -1,6 +1,6 @@
 package com.duoec.docs.logger;
 
-import com.duoec.docs.helper.StringHelper;
+import com.duoec.doclet.helper.StringHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

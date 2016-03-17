@@ -5,6 +5,7 @@
 .mtj.tmp/
 
 # Package Files #
+/ThriftDoclet/.sonar_lock
 *.jar
 *.war
 *.ear

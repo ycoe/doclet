@@ -1,6 +1,6 @@
-package com.duoec.docs.helper;
+package com.duoec.doclet.helper;
 
-import com.duoec.docs.constant.DocletConstant;
+import com.duoec.doclet.constant.DocletConstant;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

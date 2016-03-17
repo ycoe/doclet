@@ -1,7 +1,8 @@
 package com.duoec.docs.constant;
 
-import com.duoec.docs.dto.Book;
-import com.duoec.docs.dto.ClassMate;
+
+import com.duoec.doclet.dto.Book;
+import com.duoec.doclet.dto.ClassMate;
 
 import java.util.*;
 
@@ -48,8 +49,8 @@ public class DocletContext {
             return BOOK_MAP.get(bookName);
         }
         Book book = new Book(bookName);
-        book.setPath(DocletConstant.OUTPUT_PATH + "/" + bookName);
-        book.setUrl(DocletConstant.WEB_APP_CONTEXT);
+        book.setPath(SpringMvcDocletConstant.OUTPUT_PATH + "/" + bookName);
+        book.setUrl(SpringMvcDocletConstant.WEB_APP_CONTEXT);
         BOOK_MAP.put(bookName, book);
         return book;
     }
