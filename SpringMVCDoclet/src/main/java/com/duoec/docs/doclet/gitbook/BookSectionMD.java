@@ -3,6 +3,7 @@ package com.duoec.docs.doclet.gitbook;
 import com.duoec.doclet.constant.DocletConstant;
 import com.duoec.doclet.dto.ApiItem;
 import com.duoec.doclet.dto.BookSection;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class BookSectionMD {
         sb.append("* [");
         sb.append(section.getName());
         sb.append("](");
-        sb.append(section.getPath());
+        sb.append(section.getPath().substring(section.getBook().getPath().length()));
         sb.append("/README.md)");
         sb.append(DocletConstant.TURN_LINE);
 

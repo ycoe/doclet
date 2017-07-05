@@ -28,6 +28,7 @@ public class GitBookDocletImpl implements IDoclet {
         String summary = BookMD.getSummaryString(book);
         if(!DEBUG){
             FileHelper.write(docDir, "SUMMARY.md", summary);
+            FileHelper.write(docDir, "README.md", summary);
         }else{
             logger.info("\n" + summary); //测试输出
         }

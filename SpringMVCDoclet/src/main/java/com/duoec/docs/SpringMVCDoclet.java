@@ -2,12 +2,15 @@ package com.duoec.docs;
 
 import com.duoec.doclet.helper.StringHelper;
 import com.duoec.docs.analyse.ControllerAnalyse;
-import com.duoec.docs.constant.SpringMvcDocletConstant;
 import com.duoec.docs.constant.DocletContext;
+import com.duoec.docs.constant.SpringMvcDocletConstant;
 import com.duoec.docs.doclet.IDoclet;
 import com.duoec.docs.helper.SystemHelper;
 import com.duoec.docs.logger.Logger;
-import com.sun.javadoc.*;
+import com.sun.javadoc.ClassDoc;
+import com.sun.javadoc.Doclet;
+import com.sun.javadoc.LanguageVersion;
+import com.sun.javadoc.RootDoc;
 
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class SpringMVCDoclet extends Doclet {
         return result;
     }
 
-    private static boolean create(RootDoc root){
+    private static boolean create(RootDoc root) {
         String projectPath = SystemHelper.getProjectPath();
 
         //初始化客户参数
@@ -34,7 +37,7 @@ public class SpringMVCDoclet extends Doclet {
         logger.info("文档输出目录:" + SpringMvcDocletConstant.OUTPUT_PATH);
 
         String docletName = SystemHelper.getDocletClass();
-        if(StringHelper.isEmpty(docletName)){
+        if (StringHelper.isEmpty(docletName)) {
             logger.error("IDoclet未指定!");
             return false;
         }
@@ -57,14 +60,14 @@ public class SpringMVCDoclet extends Doclet {
 
         //解析Controller
         ClassDoc[] classes = root.classes();
-        for(ClassDoc classDoc : classes){
+        for (ClassDoc classDoc : classes) {
             //解析
             ControllerAnalyse.analyse(classDoc);
         }
 
         List<String> bookNames = DocletContext.getBookNames();
-        if(doclet != null && !bookNames.isEmpty()){
-            for (String bookName : bookNames){
+        if (doclet != null && !bookNames.isEmpty()) {
+            for (String bookName : bookNames) {
                 doclet.createDocs(DocletContext.getBook(bookName));
             }
         }

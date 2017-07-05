@@ -31,8 +31,8 @@ public class UserController {
      * @param option 请求
      * @return 测试return描述
      */
-    @RequestMapping(value = "/info", method = RequestMethod.GET)
-    public HttpResult<UserDetailOutOption> get(@PathVariable int apiVersion, @RequestBody List<UserInfoInOption> option){
+    @RequestMapping(method = RequestMethod.GET)
+    public HttpResult<List<UserDetailOutOption>> get(@PathVariable int apiVersion, @RequestBody UserInfoInOption option){
         UserOutOption user = new UserOutOption();
         return HttpResult.successWithData(null);
     }

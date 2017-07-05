@@ -49,7 +49,7 @@ public class TableFormater {
         sb.append(item.getFormatedTypeName());
         sb.append("` 属性");
         sb.append(DocletConstant.TURN_LINE_2);
-        sb.append("```JSON");
+        sb.append("``` javascript");
         sb.append(DocletConstant.TURN_LINE);
         sb.append(JsonFormater.toJson(item));
         sb.append(DocletConstant.TURN_LINE);

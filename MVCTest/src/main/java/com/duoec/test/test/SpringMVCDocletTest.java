@@ -13,9 +13,8 @@ public class SpringMVCDocletTest {
         String projectPath = SystemHelper.getProjectPath();
 
         String projectSrcDirs = getProjectSrcDirs();
-        System.out.println(projectSrcDirs);
-
-        String projectSrcPath = projectPath + "/TestMVC/src/main/java/";
+        System.out.println("projectPath:" + projectPath);
+        String projectSrcPath = projectPath + "/MVCTest/src/main/java/";
         String[] docArgs = new String[]{
                 "-doclet",
                 SpringMVCDoclet.class.getName(),

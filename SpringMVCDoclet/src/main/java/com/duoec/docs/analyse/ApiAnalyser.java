@@ -29,6 +29,9 @@ public class ApiAnalyser {
         AnnotationDesc[] annotations = method.annotations();
         AnnotationDesc requestMapping = AnnotationHelper.getAnnotation(annotations, SpringMvcDocletConstant.ANNOTATION_REQUEST_MAPPING);
         String url = AnnotationHelper.getStringValue(requestMapping, "value");
+        if(url == null) {
+            url = "";
+        }
         ApiItem api = section.getApiItem(section.getUrl() + url);
         String methodName = method.name();
 

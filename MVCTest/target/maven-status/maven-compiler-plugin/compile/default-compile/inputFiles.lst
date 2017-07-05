@@ -1,8 +1,8 @@
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/option/UserDetailOutOption.java
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/option/UserInfoInOption.java
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/option/UserOutOption.java
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/controller/UserController.java
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/test/SpringMVCDocletTest.java
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/option/TagOption.java
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/option/MyUser.java
-/Users/ycoe/Projects/fdd/doclet/TestMVC/src/main/java/com/duoec/test/option/HttpResult.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/controller/UserController.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/option/TagOption.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/option/UserDetailOutOption.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/test/SpringMVCDocletTest.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/option/UserOutOption.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/option/MyUser.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/option/UserInfoInOption.java
+/Users/ycoe/Projects/fdd/doclet/MVCTest/src/main/java/com/duoec/test/option/HttpResult.java

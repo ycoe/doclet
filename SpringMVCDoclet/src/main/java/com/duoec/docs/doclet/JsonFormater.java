@@ -49,7 +49,7 @@ public class JsonFormater {
             sb.append(name);
             sb.append("\"");
             sb.append(" : ");
-            if("java.util.List".equals(fullTypeName)){
+            if("java.util.List".equals(fullTypeName) || fullTypeName.startsWith("List<")){
                 sb.append(getListDemoValue(fieldItem, myPaths));
             }else{
                 sb.append(getDefaultDemoValue(fieldItem));
@@ -112,13 +112,16 @@ public class JsonFormater {
 
     private static String getListDemoValue(FieldItem fieldItem, List<String> myPaths) {
         int level = myPaths.size();
+        List<ClassMate> typeArguments = fieldItem.getTypeArguments();
+        ClassMate mate = typeArguments.get(0);
+        if("java.lang".equals(mate.getPackageName())) {
+            return fieldItem.getDemo();
+        }
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         sb.append(getCommentText(fieldItem));
         sb.append(DocletConstant.TURN_LINE);
 
-        List<ClassMate> typeArguments = fieldItem.getTypeArguments();
-        ClassMate mate = typeArguments.get(0);
         FieldItem item = new FieldItem();
         item.cloneClassMate(mate);
         sb.append(JsonFormater.toJson(item, myPaths));

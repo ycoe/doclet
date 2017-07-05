@@ -2,6 +2,7 @@ package com.duoec.docs.doclet.gitbook;
 
 import com.duoec.doclet.constant.DocletConstant;
 import com.duoec.doclet.dto.ApiItem;
+import com.duoec.doclet.dto.BookSection;
 import com.duoec.doclet.dto.ResponseFieldItem;
 import com.duoec.doclet.helper.StringHelper;
 import com.duoec.docs.constant.SpringMvcDocletConstant;
@@ -16,12 +17,13 @@ import java.util.List;
  */
 public class ApiMD {
     public static String getApiSummaryString(ApiItem api) {
+        BookSection section = api.getSection();
         StringBuilder sb = new StringBuilder();
         sb.append(DocletConstant.TAB);
         sb.append("* [");
         sb.append(api.getName());
         sb.append("](");
-        String path = api.getSection().getPath() + "/" + api.getFileName() + ".md";
+        String path = section.getPath().substring(section.getBook().getPath().length()) + "/" + api.getFileName() + ".md";
         sb.append(path);
         sb.append(")");
         sb.append(DocletConstant.TURN_LINE);
@@ -92,7 +94,7 @@ public class ApiMD {
                 sb.append(responseComment);
                 sb.append(DocletConstant.TURN_LINE_2);
             }
-            sb.append("```JSON");
+            sb.append("``` javascript");
             sb.append(DocletConstant.TURN_LINE);
             sb.append(JsonFormater.toJson(response));
             sb.append(DocletConstant.TURN_LINE);
