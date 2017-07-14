@@ -32,20 +32,18 @@ public class ApiAnalyser {
         if(url == null) {
             url = "";
         }
-        ApiItem api = section.getApiItem(section.getUrl() + url);
-        String methodName = method.name();
-
-        //保存文件名
-        String path = TagHelper.getStringValue(tags, "@path", methodName);
-        api.setFileName(path);
 
         String methodValue = AnnotationHelper.getStringValue(requestMapping, "method", "GET");
         int index = methodValue.lastIndexOf(".");
         if(index != -1){
             methodValue = methodValue.substring(index + 1);
         }
-        api.setMethod(methodValue);
+        ApiItem api = section.getApiItem(methodValue, section.getUrl() + url);
+        String methodName = method.name();
 
+        //保存文件名
+        String path = TagHelper.getStringValue(tags, "@path", methodName);
+        api.setFileName(path);
 
         String comment = method.commentText();
         String name = TagHelper.getStringValue(method.tags(), "@title", null);

@@ -119,9 +119,9 @@ public class BookSection {
         items.add(apiItem);
     }
 
-    public ApiItem getApiItem(String url) {
+    public ApiItem getApiItem(String method, String url) {
         for (ApiItem apiItem : items){
-            if(apiItem.getUrl().equals(url)){
+            if(apiItem.getUrl().equals(url) && apiItem.getMethod().equals(method)){
                 return apiItem;
             }
         }
@@ -129,6 +129,7 @@ public class BookSection {
         ApiItem apiItem = new ApiItem(url);
         apiItem.setLevel(getLevel() + 1);
         apiItem.setSection(this);
+        apiItem.setMethod(method);
         this.addApi(apiItem);
 
         return apiItem;
